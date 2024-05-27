@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 20px 20px;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar .fanid-link h2 {
+            margin: 0;
+            font-size: 22px;
+            margin-left: 20px;
+            color: #fff; 
+        }
+
+        .navbar a {
+            text-decoration-color: #fff; 
+        }
+
+        .home-button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #fff;
+            color: #007bff;
+        }
+
+        .login-button,
+        .register-button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+            margin-left: 10px; /* Espaciado entre los botones */
+        }
+
+        .login-button:hover,
+        .register-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .event-images {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .event-image {
+            width: 30%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .event-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .event-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .event-info h2 {
+            margin-top: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .view-more-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            align-self: center;
+            display: block;
+        }
+
+        .view-more-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            
+            <a href="principal.html" class="fanid-link"><h1>Eventos</h1></a>
+            <a href="FanId.html" class="fanid-link"><h2>Crear FanID</h2></a>
+        </div>
+        <div>
+            <button class="login-button" onclick="window.location.href='login.html'">Iniciar sesión</button>
+            <button class="register-button" onclick="window.location.href='register.html'">Registrarse</button>
+        </div>
+    </div>
+
+    <div class="event-images">
+        <div class="event-image">
+            <img src="evento1.jpeg" alt="Evento 1">
+            <button class="view-more-button" onclick="window.location.href='muestra1.html'">Ver más</button>
+        </div>
+        <div class="event-image">
+            <img src="evento2.jpeg" alt="Evento 2">
+            <button class="view-more-button" onclick="window.location.href='muestra2.html'">Ver más</button>
+        </div>
+        <div class="event-image">
+            <img src="evento3.jpg" alt="Evento 3">
+            <button class="view-more-button" onclick="window.location.href='muestra3.html'">Ver más</button>
+        </div>
+        <div class="event-image">
+            <img src="evento4.jpg" alt="Evento 4">
+            <button class="view-more-button" onclick="window.location.href='muestra4.html'">Ver más</button>
+        </div>
+        <div class="event-image">
+            <img src="evento5.jpg" alt="Evento 5">
+            <button class="view-more-button" onclick="window.location.href='muestra5.html'">Ver más</button>
+        </div>
+        <div class="event-image">
+            <img src="evento6.jpg" alt="Evento 6">
+            <button class="view-more-button" onclick="window.location.href='muestra6.html'">Ver más</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
