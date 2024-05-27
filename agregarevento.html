@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Evento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 20px 20px;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .back-button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 90%;
+            margin-top: 30px;
+        }
+
+        .image-section {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #uploaded-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #upload-button {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .form-section {
+            width: 45%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Evento</h1>
+        <a href="principal1.html" class="back-button">Regresar</a>
+    </div>
+
+    <div class="content">
+        <div class="image-section">
+            <img id="uploaded-image" src="#" alt="Imagen del evento">
+            <input type="file" id="upload-button" accept="image/*">
+        </div>
+
+        <div class="form-section">
+            <form>
+                <h2>Información del Evento</h2>
+
+                <label for="eventName">Nombre del Evento:</label>
+                <input type="text" id="eventName" name="eventName" required>
+
+                <label for="eventLocation">Dirección:</label>
+                <input type="text" id="eventLocation" name="eventLocation" required>
+
+                <label for="eventTime">Hora:</label>
+                <input type="time" id="eventTime" name="eventTime" required>
+
+                <label for="eventDate">Fecha:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+
+                <input type="submit" value="Agregar Evento">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var uploadedImage = document.getElementById('uploaded-image');
+            uploadedImage.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        var uploadButton = document.getElementById('upload-button');
+        uploadButton.addEventListener('change', previewImage);
+    </script>
+</body>
+</html>
